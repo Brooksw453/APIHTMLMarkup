@@ -1,0 +1,13 @@
+service: text-completion
+  
+provider:
+  name: aws
+  runtime: nodejs14.x
+   
+functions:
+  completions:
+    handler: completions.handler
+    events:
+      - httpApi: 
+          path: /
+          method: post
